@@ -189,12 +189,12 @@
   #define THERMAL_PROTECTION_PERIOD 40        // Seconds
   #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
 
-  #define ADAPTIVE_FAN_SLOWING              // Slow part cooling fan if temperature drops
-  #if BOTH(ADAPTIVE_FAN_SLOWING, PIDTEMP)
-    #define NO_FAN_SLOWING_IN_PID_TUNING    // Don't slow fan speed during M303
-  #endif
+//#define ADAPTIVE_FAN_SLOWING              // Slow part cooling fan if temperature drops
+#if BOTH(ADAPTIVE_FAN_SLOWING, PIDTEMP)
+#define NO_FAN_SLOWING_IN_PID_TUNING // Don't slow fan speed during M303
+#endif
 
-  /**
+/**
    * Whenever an M104, M109, or M303 increases the target temperature, the
    * firmware will wait for the WATCH_TEMP_PERIOD to expire. If the temperature
    * hasn't increased by WATCH_TEMP_INCREASE degrees, the machine is halted and
@@ -206,8 +206,8 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-  #define WATCH_TEMP_PERIOD 20                // Seconds
-  #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+#define WATCH_TEMP_PERIOD 20  // Seconds
+#define WATCH_TEMP_INCREASE 2 // Degrees Celsius
 #endif
 
 /**
